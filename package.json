@@ -1,0 +1,9 @@
+{
+  "name": "swnb-webpack-learning-plugin",
+  "version": "1.0.0",
+  "description": "this is a webpack plugin simply use for learning webpack-plugin ",
+  "main": "index.js",
+  "repository": "git@github.com:swnb/webpack-plugin.git",
+  "author": "swnb <1786718956@qq.com>",
+  "license": "MIT"
+}
