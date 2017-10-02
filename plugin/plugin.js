@@ -1,12 +1,12 @@
 const path = require('path');
 const mkTemplate = require('./plugin.makefile');
 //配置默认
-const o = {
-    title: 'swnb'
-};
-function makedir(templatePath = path.resolve('./template.html'), option = o) {
+function makedir(templatePath = path.resolve('./template.html'), option) {
     this.templatePath = templatePath;
-    this.option = option;
+
+    this.option = {};
+
+    this.option.title = option.title || 'swnb';
 }
 
 makedir.prototype.apply = function(compiler) {
