@@ -1,7 +1,12 @@
 const path = require('path');
 const mkTemplate = require('./plugin.makefile');
-function makedir(templatePath = path.resolve('./template.html')) {
+//配置默认
+const option = {
+    title: 'swnb'
+};
+function makedir(templatePath = path.resolve('./template.html'), option = {}) {
     this.templatePath = templatePath;
+    this.option = option;
 }
 
 makedir.prototype.apply = function(compiler) {
@@ -9,7 +14,14 @@ makedir.prototype.apply = function(compiler) {
         let arr = [];
         compilation.chunks.forEach(chunk => {
             for (let filename of chunk.files) {
-                arr.push(mkTemplate(this.templatePath, filename, compilation));
+                arr.push(
+                    mkTemplate(
+                        this.templatePath,
+                        filename,
+                        compilation,
+                        this.option
+                    )
+                );
             }
         });
         Promise.all(arr).then(() => {
