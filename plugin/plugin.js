@@ -4,7 +4,10 @@ const mkTemplate = require('./plugin.makefile');
 const option = {
     title: 'swnb'
 };
-function makedir(templatePath = path.resolve('./template.html'), option = {}) {
+function makedir(
+    templatePath = path.resolve('./template.html'),
+    option = option
+) {
     this.templatePath = templatePath;
     this.option = option;
 }
