@@ -1,7 +1,7 @@
 const path = require('path');
 const mkTemplate = require('./plugin.makefile');
 //配置默认
-function makedir(templatePath = path.resolve('./template.html'), option) {
+function makedir(option, templatePath = path.resolve('./template.html')) {
     this.templatePath = templatePath;
 
     this.option = {};
