@@ -17,10 +17,10 @@ let dealtemplate = (template_path, js, css, compilation, option) =>
             });
             js.forEach((element, index) => {
                 if (index + 1 === js.length) {
-                    str = '<script src={{js}}/>'.replace(/{{js}}/, element)
+                    str = '<script src={{js}}></script>'.replace(/{{js}}/, element)
                     string = string.replace(/{{js}}/, str);
                 } else {
-                    let str = '<script src={{js}}/>'.replace(/{{js}}/, element) + '{{js}}'
+                    let str = '<script src={{js}}></script>'.replace(/{{js}}/, element) + '{{js}}'
                     string = string.replace(/{{js}}/, str);
                 }
             });
